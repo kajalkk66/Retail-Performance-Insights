@@ -2,13 +2,13 @@ RETAIL PERFORMANCE & INSIGHTS WEBSITE
 BBA Business Analytics Project | Integral University
 
 WHAT YOU NEED
-1. Visual Studio Code (VS Code)
+1. Visual Studio Code (VS Code) 
 2. Google Chrome or another modern browser
 3. Internet connection for Google Fonts and Chart.js CDN
 
 HOW TO RUN
 1. Extract the ZIP file.
-2. Open VS Code.
+2. Open VS Code.  
 3. Select File > Open Folder.
 4. Select the extracted "retail-performance-website" folder.
 5. Open index.html.
