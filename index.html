@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Performance & Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">R</div>
+        <div><strong>RetailIQ</strong><span>BUSINESS ANALYTICS</span></div>
+      </div>
+      <div class="side-label">WORKSPACE</div>
+      <nav>
+        <a class="nav-link active" href="#overview"><span>▦</span> Overview</a>
+        <a class="nav-link" href="#category"><span>◫</span> Category analysis</a>
+        <a class="nav-link" href="#geography"><span>⌖</span> Geography</a>
+        <a class="nav-link" href="#products"><span>▤</span> Products & payments</a>
+        <a class="nav-link" href="#customers"><span>♧</span> Customers</a>
+        <a class="nav-link" href="#recommendations"><span>✧</span> Recommendations</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-label">PROJECT</div>
+        <p>Retail Sales<br>Performance & Insights</p>
+        <small>Integral University<br>BBA Business Analytics</small>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">INTEGRAL UNIVERSITY / BBA BUSINESS ANALYTICS</div>
+          <h1>Retail Performance <span>& Insights</span></h1>
+          <p class="subtitle">Turning retail data into clear business decisions.</p>
+        </div>
+        <div class="top-actions">
+          <span class="status-dot"></span><span class="live-label">PROJECT DASHBOARD</span>
+          <button class="print-btn" onclick="window.print()">Print report ↗</button>
+        </div>
+      </header>
+
+      <section id="overview" class="section">
+        <div class="section-heading">
+          <div><div class="eyebrow">MANAGEMENT OVERVIEW</div><h2>Performance at a glance</h2></div>
+          <span class="period-chip">PROJECT SUMMARY</span>
+        </div>
+        <div class="kpi-grid">
+          <article class="kpi-card"><div class="kpi-top"><span>Total sales</span><span class="kpi-icon blue">₹</span></div><strong>247.77M</strong><small class="positive">Overall retail sales</small></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Total profit</span><span class="kpi-icon green">↗</span></div><strong>44.48M</strong><small class="positive">Overall profit</small></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Total orders</span><span class="kpi-icon purple">▤</span></div><strong>10K</strong><small>Orders recorded</small></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Quantity sold</span><span class="kpi-icon orange">▥</span></div><strong>30K</strong><small>Units sold</small></article>
+        </div>
+        <div class="content-grid overview-grid">
+          <article class="panel chart-panel">
+            <div class="panel-heading"><div><h3>Sales by category</h3><p>Category contribution to total sales</p></div><span class="tag">SALES</span></div>
+            <div class="chart-wrap tall"><canvas id="categoryChart"></canvas></div>
+          </article>
+          <article class="panel takeaway-panel">
+            <div class="panel-heading"><div><h3>Key business takeaway</h3><p>What the numbers tell us</p></div><span class="spark">✦</span></div>
+            <div class="highlight-number">177M</div>
+            <h4>Electronics leads the business</h4>
+            <p>Electronics contributes approximately 177M in sales and 31.9M in profit, making it the strongest category in the reported dashboard.</p>
+            <div class="divider"></div>
+            <div class="mini-stat"><span>Electronics vs. Home Appliances</span><strong>~4.4×</strong></div>
+            <div class="mini-stat"><span>Regular customer sales share</span><strong>60.2%</strong></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="category" class="section">
+        <div class="section-heading"><div><div class="eyebrow">01 / CATEGORY PERFORMANCE</div><h2>Where sales and profit come from</h2></div></div>
+        <div class="content-grid two-col">
+          <article class="panel"><div class="panel-heading"><div><h3>Sales by category</h3><p>Reported sales, in millions</p></div></div><div class="chart-wrap"><canvas id="salesCategoryChart"></canvas></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Profit by category</h3><p>Reported profit, in millions</p></div></div><div class="chart-wrap"><canvas id="profitCategoryChart"></canvas></div></article>
+        </div>
+        <div class="insight-strip"><span class="insight-icon">✦</span><p><strong>Insight:</strong> Electronics sales are about 4.4 times Home Appliances sales. Electronics contributes approximately 31.9M in profit.</p></div>
+      </section>
+
+      <section id="geography" class="section">
+        <div class="section-heading"><div><div class="eyebrow">02 / GEOGRAPHIC PERFORMANCE</div><h2>Leading states and cities</h2></div></div>
+        <div class="content-grid two-col">
+          <article class="panel"><div class="panel-heading"><div><h3>Top states by sales</h3><p>Sales, in millions</p></div></div><div class="chart-wrap"><canvas id="stateChart"></canvas></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Top cities by sales</h3><p>Sales, in millions</p></div></div><div class="chart-wrap"><canvas id="cityChart"></canvas></div></article>
+        </div>
+        <div class="insight-strip"><span class="insight-icon">⌖</span><p><strong>Insight:</strong> Uttar Pradesh leads the listed states at approximately 41M in sales. Kanpur and Lucknow are among the listed leading cities.</p></div>
+      </section>
+
+      <section id="products" class="section">
+        <div class="section-heading"><div><div class="eyebrow">03 / PRODUCT & PAYMENT INSIGHTS</div><h2>What customers buy and how they pay</h2></div></div>
+        <div class="content-grid two-col">
+          <article class="panel"><div class="panel-heading"><div><h3>Top products by sales</h3><p>Sales, in millions</p></div></div><div class="chart-wrap"><canvas id="productChart"></canvas></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Sales by payment method</h3><p>Sales, in millions</p></div></div><div class="chart-wrap"><canvas id="paymentChart"></canvas></div></article>
+        </div>
+        <div class="content-grid two-col lower-grid">
+          <article class="panel"><div class="panel-heading"><div><h3>Sales by store type</h3><p>Sales, in millions</p></div></div><div class="chart-wrap compact"><canvas id="storeChart"></canvas></div></article>
+          <article class="panel note-panel"><div class="note-icon">◎</div><h3>Product & payment takeaway</h3><p>Headphones lead the listed products at about 49M. Cash records the highest payment-method sales at about 54M.</p><p class="muted">Store-type sales are relatively close, ranging from about 60M to 63M.</p></article>
+        </div>
+      </section>
+
+      <section id="customers" class="section">
+        <div class="section-heading"><div><div class="eyebrow">04 / CUSTOMER SEGMENTS</div><h2>Understand the customer mix</h2></div></div>
+        <div class="content-grid two-col">
+          <article class="panel"><div class="panel-heading"><div><h3>Sales by customer segment</h3><p>Sales, in millions</p></div></div><div class="chart-wrap"><canvas id="segmentSalesChart"></canvas></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Profit by customer segment</h3><p>Profit, in millions</p></div></div><div class="chart-wrap"><canvas id="segmentProfitChart"></canvas></div></article>
+        </div>
+        <div class="insight-strip"><span class="insight-icon">♧</span><p><strong>Insight:</strong> Regular customers contribute about 60.2% of total sales and the highest segment profit, at approximately 26.7M.</p></div>
+      </section>
+
+      <section id="recommendations" class="section">
+        <div class="section-heading"><div><div class="eyebrow">05 / BUSINESS ACTIONS</div><h2>Recommendations & conclusion</h2></div></div>
+        <div class="recommendation-grid">
+          <article class="recommendation"><span>01</span><div><h3>Prioritise inventory</h3><p>Monitor high-sales products such as Headphones, Smartphones and Laptops.</p></div></article>
+          <article class="recommendation"><span>02</span><div><h3>Review category profitability</h3><p>Study Electronics profitability and identify the factors behind its strong performance.</p></div></article>
+          <article class="recommendation"><span>03</span><div><h3>Plan regional campaigns</h3><p>Build region-specific campaigns for high-performing states and cities.</p></div></article>
+          <article class="recommendation"><span>04</span><div><h3>Retain and grow customers</h3><p>Retain Regular customers while developing Premium and New customer segments.</p></div></article>
+          <article class="recommendation"><span>05</span><div><h3>Review discounts and trends</h3><p>Compare discount levels with profit before changing promotions; use monthly trends to plan stock and campaigns.</p></div></article>
+        </div>
+        <div class="conclusion"><div class="conclusion-mark">R</div><div><div class="eyebrow">PROJECT CONCLUSION</div><h3>From retail records to practical business insights.</h3><p>SQL structures the analysis, while Power BI presents the results in an interactive four-page dashboard. This project demonstrates how retail data can be converted into performance indicators and useful management decisions.</p></div></div>
+      </section>
+
+      <footer><span>RETAIL PERFORMANCE & INSIGHTS</span><span>Integral University · BBA Business Analytics</span><span>Project team: Ayan Khan · Ganesh Singh · Anushka Singh · Ayushi Swaraj</span></footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
